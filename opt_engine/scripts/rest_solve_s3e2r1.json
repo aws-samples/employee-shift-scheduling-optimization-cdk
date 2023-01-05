@@ -1,0 +1,15 @@
+{
+  "shiftRequirements" : [
+    { "targetDate" : "20221101", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 1 },
+    { "targetDate" : "20221102", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 1 },
+    { "targetDate" : "20221102", "skill" : "PR", "atndCode" : "P614", "requiredCnt" : 1 },
+    { "targetDate" : "20221103", "skill" : "PR", "atndCode" : "P614", "requiredCnt" : 2 }
+  ],
+  "employees" : [
+    { "empNo" : "1", "name" : "Winter", "mainSkill" : "FR", "skillList" : ["FR", "PR"] },
+    { "empNo" : "2", "name" : "Autumn", "mainSkill" : "PR", "skillList" : ["PR"] }
+  ],
+  "employeeRequests" : [
+    { "date" : "20221102", "empNo" : "2", "type" : "V" }
+  ]
+}

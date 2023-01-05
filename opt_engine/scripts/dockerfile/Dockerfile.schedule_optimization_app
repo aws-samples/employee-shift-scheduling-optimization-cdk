@@ -1,0 +1,12 @@
+FROM amazoncorretto:17 as optengine
+
+WORKDIR /root
+
+COPY opt-engine-runner.jar ./opt-engine-runner.jar
+COPY solver-config.xml ./solver-config.xml
+
+RUN echo 'export $(strings /proc/1/environ | grep AWS_CONTAINER_CREDENTIALS_RELATIVE_URI)' >> /root/.profile
+
+EXPOSE 80
+
+CMD ["java", "-jar", "opt-engine-runner.jar"]

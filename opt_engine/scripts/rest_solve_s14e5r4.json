@@ -1,0 +1,43 @@
+{
+  "shiftRequirements" : [
+    { "targetDate" : "20220801", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2 },
+    { "targetDate" : "20220802", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2  },
+    { "targetDate" : "20220802", "skill" : "PR", "atndCode" : "P614", "requiredCnt" : 2  },
+    { "targetDate" : "20220803", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 1  },
+    { "targetDate" : "20220803", "skill" : "FR", "atndCode" : "P614", "requiredCnt" : 1  },
+    { "targetDate" : "20220803", "skill" : "PR", "atndCode" : "P615", "requiredCnt" : 1  },
+    { "targetDate" : "20220803", "skill" : "PR", "atndCode" : "L615", "requiredCnt" : 2  },
+    { "targetDate" : "20220804", "skill" : "FR", "atndCode" : "L614", "requiredCnt" : 3  },
+    { "targetDate" : "20220805", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2 },
+    { "targetDate" : "20220805", "skill" : "MC/EY", "atndCode" : "P614", "requiredCnt" : 1  },
+    { "targetDate" : "20220806", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2 },
+    { "targetDate" : "20220807", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2  },
+    { "targetDate" : "20220807", "skill" : "PR", "atndCode" : "P614", "requiredCnt" : 2  },
+    { "targetDate" : "20220808", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 1  },
+    { "targetDate" : "20220808", "skill" : "FR", "atndCode" : "P614", "requiredCnt" : 1  },
+    { "targetDate" : "20220809", "skill" : "PR", "atndCode" : "P615", "requiredCnt" : 1  },
+    { "targetDate" : "20220809", "skill" : "PR", "atndCode" : "L615", "requiredCnt" : 2  },
+    { "targetDate" : "20220810", "skill" : "FR", "atndCode" : "L614", "requiredCnt" : 3  },
+    { "targetDate" : "20220811", "skill" : "MC/EY", "atndCode" : "P614", "requiredCnt" : 1  },
+    { "targetDate" : "20220812", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2 },
+    { "targetDate" : "20220813", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 2  },
+    { "targetDate" : "20220813", "skill" : "PR", "atndCode" : "P614", "requiredCnt" : 2  },
+    { "targetDate" : "20220814", "skill" : "FR", "atndCode" : "A614", "requiredCnt" : 1  },
+    { "targetDate" : "20220814", "skill" : "FR", "atndCode" : "P614", "requiredCnt" : 1  },
+    { "targetDate" : "20220814", "skill" : "PR", "atndCode" : "P615", "requiredCnt" : 1  },
+    { "targetDate" : "20220814", "skill" : "PR", "atndCode" : "L615", "requiredCnt" : 2  }
+  ],
+  "employees" : [
+    { "empNo" : "1", "name" : "Winter", "mainSkill" : "FR", "skillList" : ["FR", "PR"]  },
+    { "empNo" : "2", "name" : "Autumn", "mainSkill" : "PR", "skillList" : ["PR"]  },
+    { "empNo" : "3", "name" : "Summer", "mainSkill" : "FR", "skillList" : ["FR"]  },
+    { "empNo" : "4", "name" : "Spring", "mainSkill" : "PR", "skillList" : ["FR", "PR"]  },
+    { "empNo" : "5", "name" : "Karina", "mainSkill" : "FR", "skillList" : ["FR", "PR", "MC/EY"]  }
+  ],
+  "employeeRequests" : [
+    { "date" : "20220802", "empNo" : "1", "type" : "A"  },
+    { "date" : "20220804", "empNo" : "2", "type" : "P"  },
+    { "date" : "20220802", "empNo" : "2", "type" : "V"  },
+    { "date" : "20220805", "empNo" : "4", "type" : "H"  }
+  ]
+}

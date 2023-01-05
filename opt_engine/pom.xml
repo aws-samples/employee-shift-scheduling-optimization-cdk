@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.aws.proto</groupId>
+    <artifactId>schedule-optimization-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>AWS Prototyping - Schedule optimization parent</name>
+    <description>
+        Employee shift schedule optimization
+    </description>
+    <licenses>
+        <license>
+            <name>MIT-0</name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <awssdk.version>2.17.209</awssdk.version>
+        <awssdk2-dynamo-json-helper.version>0.13.0</awssdk2-dynamo-json-helper.version>
+        <compiler-plugin.version>3.10.0</compiler-plugin.version>
+        <lombok.version>1.18.22</lombok.version>
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <optaplanner.version>8.30.0.Final</optaplanner.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <quarkus.package.type>uber-jar</quarkus.package.type>
+        <quarkus.platform.version>2.14.0.Final</quarkus.platform.version>
+        <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>AWS Prototyping</name>
+            <organization>Amazon Web Services</organization>
+        </developer>
+    </developers>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-universe-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${awssdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.github.bijukunjummen/aws-sdk2-dynamo-json-helper -->
+            <dependency>
+                <groupId>com.github.bijukunjummen</groupId>
+                <artifactId>aws-sdk2-dynamo-json-helper</artifactId>
+                <version>${awssdk2-dynamo-json-helper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.optaplanner</groupId>
+                <artifactId>optaplanner-quarkus</artifactId>
+                <version>${optaplanner.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire-plugin.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>commons-logging-jboss-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.slf4j</groupId>
+            <artifactId>slf4j-jboss-logmanager</artifactId>
+        </dependency>
+        <!-- /logging -->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.target}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire-plugin.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>build:opt-engine</id>
+            <modules>
+                <module>core</module>
+                <module>apps/app-core</module>
+                <module>apps/schedule-optimization-app</module>
+            </modules>
+            <build>
+                <defaultGoal>clean package</defaultGoal>
+            </build>
+        </profile>
+
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>core</module>
+                <module>apps</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

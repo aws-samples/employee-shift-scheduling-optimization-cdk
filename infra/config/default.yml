@@ -1,0 +1,48 @@
+---
+# environment vars
+env:
+  # AWS Account ID (12-digit integer)
+  account: 'XXXXXXXXXXXX'
+
+  # AWS region string
+  region: ap-northeast-2
+
+# string prefix for resources created by CDK
+namespace: devproto
+
+# the administrator email address
+# make sure this is accurate, cognito will send a temporary password once the deployment goes through
+administratorEmail: your-email@example.com
+
+# code repository
+codeCommit:
+  repositoryName: 'proto-schedule-optimization'
+  deployBranchName: 'dist'
+
+# vpc config
+vpcConfig:
+  vpcName: 'proto-vpc'
+  vpcCidr: '10.0.0.0/16'
+  hasNatGateway: false
+
+# optimization container config
+# https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/userguide/task_definition_parameters.html#task_size
+optEngine:
+  desiredTasks: 1
+  cpu: 4096
+  memory: 16384
+  containerPort: 8080
+
+# SSM ParameterStore keys
+parameterStoreKeys:
+  # keys for VPC
+  commonVpcId: /Proto/VPC/Common/VpcId
+  # keys for solution status table
+  ddbSolutionState: /Proto/DDB/TableName/SolutionState
+  # keys for result bucket
+  s3SolutionBucket: /Proto/S3/Bucket/ScheduleSolution
+  # keys for ECR repository of optimization engine
+  ecrOptEngineRepo: /Proto/ECR/Repo/OptEngine
+  optEngineAlbDnsName: /Proto/ALB/Endpoint/OptEngine
+  optEngineServiceArn: /Proto/ECS/Service/OptEngine
+  optEngineContainerName: 'schedule-optimization-app-container'

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+
+    <!-- To solve faster by saturating multiple CPU cores-->
+    <moveThreadCount>AUTO</moveThreadCount>
+
+    <!-- Solution and Domain -->
+    <solutionClass>dev.aws.proto.optengine.solution.EmployeeScheduleSolution</solutionClass>
+    <entityClass>dev.aws.proto.optengine.domain.ShiftAssignment</entityClass>
+
+    <!-- Score -->
+    <scoreDirectorFactory>
+        <constraintProviderClass>dev.aws.proto.optengine.solver.EmployeeScheduleConstraintProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+    </scoreDirectorFactory>
+
+    <!-- termination conditions -->
+    <termination>
+        <secondsSpentLimit>60</secondsSpentLimit>
+        <unimprovedSecondsSpentLimit>5</unimprovedSecondsSpentLimit>
+        <bestScoreFeasible>true</bestScoreFeasible>
+    </termination>
+
+    <!-- phase 1 : constructionHeuristic -->
+    <constructionHeuristic>
+        <constructionHeuristicType>WEAKEST_FIT</constructionHeuristicType>
+    </constructionHeuristic>
+
+    <!-- phase 2 : localSearch -->
+    <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector/>
+            <swapMoveSelector/>
+            <pillarChangeMoveSelector/>
+            <pillarSwapMoveSelector/>
+        </unionMoveSelector>
+        <acceptor>
+            <entityTabuSize>5</entityTabuSize>
+            <lateAcceptanceSize>100</lateAcceptanceSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>200</acceptedCountLimit>
+        </forager>
+    </localSearch>
+</solver>

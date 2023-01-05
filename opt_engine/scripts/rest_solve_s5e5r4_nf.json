@@ -1,0 +1,106 @@
+{
+  "shiftRequirements" : [
+    {
+      "targetDate" : "20221101",
+      "skill" : "FR",
+      "atndCode" : "A614",
+      "requiredCnt" : 5
+    },
+    {
+      "targetDate" : "20221102",
+      "skill" : "PR",
+      "atndCode" : "P614",
+      "requiredCnt" : 5
+    },
+    {
+      "targetDate" : "20221103",
+      "skill" : "FR",
+      "atndCode" : "A614",
+      "requiredCnt" : 1
+    },
+    {
+      "targetDate" : "20221103",
+      "skill" : "FR",
+      "atndCode" : "P614",
+      "requiredCnt" : 1
+    },
+    {
+      "targetDate" : "20221103",
+      "skill" : "PR",
+      "atndCode" : "P615",
+      "requiredCnt" : 1
+    },
+    {
+      "targetDate" : "20221103",
+      "skill" : "PR",
+      "atndCode" : "L615",
+      "requiredCnt" : 2
+    },
+    {
+      "targetDate" : "20221104",
+      "skill" : "FR",
+      "atndCode" : "L614",
+      "requiredCnt" : 3
+    },
+    {
+      "targetDate" : "20221105",
+      "skill" : "MC/EY",
+      "atndCode" : "P614",
+      "requiredCnt" : 1
+    }
+  ],
+  "employees" : [
+    {
+      "empNo" : "1",
+      "name" : "Winter",
+      "mainSkill" : "FR",
+      "skillList" : ["FR", "PR"]
+    },
+    {
+      "empNo" : "2",
+      "name" : "Autumn",
+      "mainSkill" : "PR",
+      "skillList" : ["PR"]
+    },
+    {
+      "empNo" : "3",
+      "name" : "Summer",
+      "mainSkill" : "FR",
+      "skillList" : ["FR"]
+    },
+    {
+      "empNo" : "4",
+      "name" : "Spring",
+      "mainSkill" : "PR",
+      "skillList" : ["FR", "PR"]
+    },
+    {
+      "empNo" : "5",
+      "name" : "Karina",
+      "mainSkill" : "FR",
+      "skillList" : ["FR", "PR", "MC/EY"]
+    }
+  ],
+  "employeeRequests" : [
+    {
+      "date" : "20221102",
+      "empNo" : "1",
+      "type" : "A"
+    },
+    {
+      "date" : "20221104",
+      "empNo" : "2",
+      "type" : "P"
+    },
+    {
+      "date" : "20221102",
+      "empNo" : "2",
+      "type" : "V"
+    },
+    {
+      "date" : "20221105",
+      "empNo" : "5",
+      "type" : "H"
+    }
+  ]
+}

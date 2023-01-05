@@ -1,0 +1,37 @@
+{
+  "shiftRequirements" : [
+    {
+      "targetDate" : "20221101",
+      "skill" : "FR",
+      "atndCode" : "A614",
+      "requiredCnt" : 1
+    },
+    {
+      "targetDate" : "20221102",
+      "skill" : "FR",
+      "atndCode" : "P614",
+      "requiredCnt" : 1
+    },
+    {
+      "targetDate" : "20221103",
+      "skill" : "PR",
+      "atndCode" : "L614",
+      "requiredCnt" : 1
+    }
+  ],
+  "employees" : [
+    {
+      "empNo" : "1",
+      "name" : "Awesome",
+      "mainSkill" : "FR",
+      "skillList" : ["FR", "PR"]
+    }
+  ],
+  "employeeRequests" : [
+    {
+      "date" : "20221104",
+      "empNo" : "1",
+      "type" : "V"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "schedule-optimization-engine",
+  "version": "1.0.0",
+  "description": "Schedule Optimization Prototype",
+  "contributors": [
+    "Pilmo Kang <pmkang@amazon.com>"
+  ],
+  "license": "MIT-0",
+  "private": true,
+  "workspaces": [
+    "infra",
+    "opt_engine"
+  ],
+  "scripts": {
+    "init-project": "yarn install",
+    "build": "yarn build:opt-engine && yarn build:infra",
+    "build:infra": "cd infra && yarn build",
+    "build:opt-engine": "cd opt_engine && yarn build",
+    "deploy": "cd infra && yarn deploy",
+    "clean:all": "yarn clean:deep && yarn clean:opt-engine",
+    "clean:deep": "(find . -type d -name node_modules -exec rm -rf {} \\; &> /dev/null) || exit 0;",
+    "clean:opt-engine": "cd opt_engine && yarn clean", 
+    "tsc": "tsc"
+  },
+  "resolutions": {
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.54.0",
+    "cdk-constants": "^3.0.3",
+    "cdk-iam-actions": "^1.0.0",
+    "constructs": "^10.1.163"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^18.11.9",
+    "eslint": "^7.3.1",
+    "jest": "^27.4.3",
+    "prettier": "^2.5.0",
+    "ts-jest": "^27.1.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}

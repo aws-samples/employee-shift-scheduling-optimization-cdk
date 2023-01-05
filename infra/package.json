@@ -1,0 +1,44 @@
+{
+  "name": "proto-schedule-optimization-infra",
+  "version": "1.0.0",
+  "description": "AWS Prototyping - Infra",
+  "author": "Amazon Web Services - Prototyping Team",
+  "contributors": [
+    "Pilmo Kang <pmkang@amazon.com>"
+  ],
+  "license": "MIT-0",
+  "private": true,
+  "bin": {
+    "infra": "bin/dev-infra.js"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "aws-cdk",
+    "synth": "cdk synth",
+    "cdk:bootstrap": "cdk bootstrap",
+    "dev:cdk": "cdk --app=\"npx ts-node --prefer-ts-exts bin/dev-infra.ts\" --output cdk.out.dev",
+    "dev:deploy": "cdk deploy --require-approval never --all",
+    "dev:DESTROY:all": "cdk destroy --all",
+    "dev:synth": "cdk synth",
+    "cfn-nag": "mkdir -p ../../reports && cfn_nag_scan --input-path=./cdk.out.dev/ --template-pattern .*\\.template\\.json --output-format json > ../../reports/cfn-nag-report.json",
+    "cfn-nag:install": "brew install ruby brew-gem && brew gem install cfn-nag",
+    "prereview": "yarn dev:synth",
+    "review": "yarn cfn-nag"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "aws-cdk-lib": "^2.54.0",
+    "cdk-nag": "^2.18.35",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.54.0",
+    "cdk-iam-actions": "^1.0.0",
+    "config": "^3.3.6",
+    "constructs": "^10.1.163",
+    "source-map-support": "^0.5.16"
+  }
+}

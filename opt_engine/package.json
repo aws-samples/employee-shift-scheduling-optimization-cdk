@@ -1,0 +1,16 @@
+{
+  "name": "proto-schedule-optimization-engine",
+  "version": "1.0.0",
+  "license": "MIT-0",
+  "private": true,
+  "description": "Schedule optimization prototyping",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
+    "clean:deep": "yarn clean && mvn clean",    
+    "build": "./build_schedule_optimization_app.sh"
+  },
+  "author": "Amazon Web Services - Prototying"
+}
