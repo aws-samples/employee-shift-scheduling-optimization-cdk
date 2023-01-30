@@ -94,4 +94,4 @@ This project let you provision employee shift scheduling application using Amazo
 
 ## License
 
-This library is licensed under the Amazon Software License. See the LICENSE file.
+This sample project is licensed under the MIT-0 License. See the LICENSE file.
