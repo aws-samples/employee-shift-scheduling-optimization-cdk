@@ -4,6 +4,19 @@ This project let you provision employee shift scheduling application using Amazo
 
 ![img_sample_run](docs/img_sample_run.png)
 
+## Architecture
+
+### Solution Architecture
+![img_aws_cloud_architecture](docs/img_aws_cloud_architecture.png)
+
+### Folder structure
+```
+.
+├── infra (cdk application to deploy cloud resources)
+├── docs (detailed documentation)
+└── opt_engine (optimization engine)
+```
+
 ## Getting Started
 
 ### Project Config
@@ -61,19 +74,6 @@ This project let you provision employee shift scheduling application using Amazo
    1. run `java -jar opt-engine-runner.jar`
    1. navigate to `opt_engine/scripts`
    1. run `rest_solve.sh`
-
-## Architecture
-
-### Solution Architecture
-![img_aws_cloud_architecture](docs/img_aws_cloud_architecture.png)
-
-### Folder structure
-```
-.
-├── infra (cdk application to deploy cloud resources)
-├── docs (detailed documentation)
-└── opt_engine (optimization engine)
-```
 
 ## Requirements
 
