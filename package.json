@@ -1,5 +1,5 @@
 {
-  "name": "schedule-optimization-engine",
+  "name": "@aws-samples/schedule-optimization-engine",
   "version": "1.0.0",
   "description": "Schedule Optimization Prototype",
   "contributors": [
