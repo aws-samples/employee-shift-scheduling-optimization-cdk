@@ -1,5 +1,5 @@
 {
-  "name": "proto-schedule-optimization-infra",
+  "name": "@aws-samples/proto-schedule-optimization-infra",
   "version": "1.0.0",
   "description": "AWS Prototyping - Infra",
   "author": "Amazon Web Services - Prototyping Team",
