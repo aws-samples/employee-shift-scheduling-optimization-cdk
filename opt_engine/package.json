@@ -1,5 +1,5 @@
 {
-  "name": "proto-schedule-optimization-engine",
+  "name": "@aws-samples/proto-schedule-optimization-engine",
   "version": "1.0.0",
   "license": "MIT-0",
   "private": true,
